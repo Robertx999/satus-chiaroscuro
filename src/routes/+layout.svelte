@@ -3,5 +3,5 @@
 </script>
 
 <div class="h-fit">
-    <slot />
+	<slot />
 </div>
