@@ -1,31 +1,31 @@
 <script>
-	let favourites = [
-		'google.com',
-		'github.com',
-		'ign.com/wikis',
-		'karl.gg',
-		'gg.deals',
-		'youtube.com'
-	];
+	/** @type {String[]} */
+	export let favourites;
+	/** @type {String} */
+	let tipData;
 </script>
 
-<div class="btn-group">
-	{#each favourites as site}
-		<button
-			class="btn border border-slate-600 -mx-px"
-			on:click={() => {
-				window.location.href = site;
-			}}
-		>
-			<img
-				class="rounded-full"
-				src="https://s2.googleusercontent.com/s2/favicons?domain={site}&sz=18"
-				alt=""
-			/>
-		</button>
-	{/each}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<label for="add-fav-site" class="btn border border-slate-600 -mx-px">
+<div class="tooltip tooltip-primary" data-tip={tipData}>
+	<div class="btn-group">
+		{#each favourites as site}
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+			<button
+				class="btn border border-slate-600 -mx-px"
+				on:mouseover={() => {
+					tipData = site.replace(/https?:\/\//, '');
+				}}
+				on:click={() => {
+					window.location.href = 'http://'.concat(site.replace(/https?:\/\//, ''));
+				}}
+			>
+				<img
+					class="rounded-full"
+					src="https://s2.googleusercontent.com/s2/favicons?domain={site}&sz=18"
+					alt=""
+				/>
+			</button>
+		{/each}
+		<!-- <label for="add-fav-site" class="btn border border-slate-600 -mx-px">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="18"
@@ -38,5 +38,6 @@
 				d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
 			/>
 		</svg>
-	</label>
+	</label> -->
+	</div>
 </div>

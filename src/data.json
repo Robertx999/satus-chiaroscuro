@@ -1,0 +1,14 @@
+{
+	"favourites": ["google.com", "github.com", "ign.com/wikis", "karl.gg", "gg.deals", "youtube.com"],
+	"spotify_api": {
+		"client_id": "38b009f07f3449099fdbf199a46e325b",
+		"client_secret": "13c2d01003f74cc5a1146c09497c6ad9",
+		"redirect_uri": "http://127.0.0.1:5173",
+		"access_token": "BQAZzPSttePPrirWfwRnBDXdsd_m_cYk3lZgJwAf9JFfK-rP1lUznIeTjmFtHwlhbTE0O4HG7-MBT_Ajk23_6M6MMs97c2lAtBNWqd076Q08oU7nFKtqt3hEo5k-mODXbLQU3ujD_xCmXNvVee0amVRTKi5wdpO2wzPUZaBN-UkJFltZ6nvFBTG2Wbum1J8Ut0qZJXLvXud-tA",
+		"token_type": "Bearer",
+		"grant_type": "authorization_code",
+		"refresh_token": "AQDWN31SEPICjTrE1LE7c4MI3ynmAHr3_T_ijhPCG2Y-nvqUdtwB6dA7nFO1bBhpft7mnmFjVeT8M9amrInpqFMPHLvhdUTRdEVUHl9I5D4tRxBHrlwSHQQ8Pgw8mgWAyys",
+		"scope": "user-read-playback-state",
+		"code": "AQAl9_XGWukipE4uLZQuwbOo_eHEND1WSJ9N0IaF02si8SbFLYTV2Vpp7qR6-aHKlALes9eKVN99en6kIcDjlqUebe7BNDIS8Vp2qZLqoK8dWxb3VDvpKsYcaCXiNnV4m49GL16GVJwQTuqJlOvRAMV8cU-MOo28Om1HwUUSgf_s2dC6gHiEdFzCiDcj9QHPgd_cYUVVz7xD1EiVj2HVr_f-IWdn2bUcPy3iUGg"
+	}
+}

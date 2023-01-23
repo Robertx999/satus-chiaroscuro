@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { showDumbControls, isSearchFocused, setFocusState } from '../lib/focusHandler';
 
-	let input_value = '';
+	/** @type {String} */
+	let input_value;
 	/** @type {HTMLInputElement} */
 	let searchInput;
 
@@ -10,10 +11,15 @@
 		searchInput.focus();
 	});
 
-	// addEventListener('keyup', (e) => {
-	//     if(e.key == 'f'){
-	//         searchInput.focus();
-	//     }
+	// document.addEventListener('keyup', (e) => {
+	// 	switch (e.key) {
+	// 		case 'f':
+	// 			searchInput.focus();
+	// 			break;
+	// 		case 'Escape':
+	// 			searchInput.blur();
+	// 			break;
+	// 	}
 	// });
 </script>
 

@@ -3,12 +3,12 @@
 		/^(?:https?:\/\/)?(?:www[.])?((?:[a-zA-Z0-9-]{1,63}[.])?[a-zA-Z0-9-]{1,63}[.][a-zA-Z]{2,6}\/?.*)$/gs;
 
 	/** @type {string} */
-	let domainInputValue;
+	let domainInputValue = '';
 	/** @type {boolean} */
 	let isValid;
 	$: domainInputValue,
 		(isValid = domainRegex.test(domainInputValue)),
-		domainRegex.test(domainInputValue);
+		console.log(domainRegex.test(domainInputValue));
 </script>
 
 <!-- on:change={(e) => {
@@ -21,15 +21,34 @@
 		<h3 class="font-bold text-lg">Add Favourtie Website</h3>
 		<div class="h-5" />
 		<!-- {#if modalOpenned} -->
-		<input
-			class="input input-bordered w-96 max-w-xs {isValid ? 'border-green-600 border-2' : ''}"
-			bind:value={domainInputValue}
-			type="text"
-			placeholder="e.g. domain.com/sub..."
-		/>
+		<div class="form-control">
+			<div class="input-group">
+				<input
+					class="input input-bordered w-96 max-w-xs {isValid ? 'border-green-600 border-2' : ''}"
+					bind:value={domainInputValue}
+					type="text"
+					placeholder="e.g. domain.com/sub..."
+				/>
+				<span>
+					<img
+						class="rounded-full w-4"
+						src="https://s2.googleusercontent.com/s2/favicons?domain={domainInputValue
+							.replace('https://', '')
+							.replace('http://', '')}&sz=18"
+						alt=""
+					/>
+				</span>
+			</div>
+		</div>
 		<!-- {/if} -->
 		<div class="modal-action">
-			<label for="add-fav-site" class="btn {isValid ? '' : 'btn-disabled'}">
+			<label
+				on:click={() => {
+					domainInputValue = '';
+				}}
+				for="add-fav-site"
+				class="btn {isValid ? '' : 'btn-disabled'}"
+			>
 				Add
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

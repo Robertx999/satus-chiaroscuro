@@ -26,6 +26,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^2.47.0"
+		"daisyui": "^2.47.0",
+		"spotify-web-api-node": "^5.0.2",
+		"superagent": "^8.0.8"
 	}
 }
